@@ -1,0 +1,23 @@
+// a = $first, b = 0, c = 14
+int func4(int edi, int esi, int edx){
+	int eax = (edx - esi)/2;
+	int ecx = eax + esi;	
+
+	if (ecx == edi) {
+		eax = 0;
+		return
+	} 
+	if (ecx < edi){
+		eax = 0;
+		esi = ecx + 1;
+		call func4;
+		eax = 1 + 2*eax;
+		return
+	}
+	if (ecx > edi) {
+		edx = ecx - 1;
+		call func4
+		eax *= 2;
+		return
+	}
+}
