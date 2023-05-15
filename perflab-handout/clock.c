@@ -16,11 +16,7 @@
 #endif
 
 /* Detect whether running on x86 */
-#ifdef __i386__
 #define IS_x86 1
-#else
-#define IS_x86 0
-#endif
 
 #if IS_ALPHA
 /* Initialize the cycle counter */

@@ -10,11 +10,9 @@
  * Please fill in the following team struct 
  */
 team_t team = {
-    "bovik",              /* Team name */
-
-    "Harry Q. Bovik",     /* First member full name */
-    "bovik@nowhere.edu",  /* First member email address */
-
+    "linepi",              /* Team name */
+    "magicode",     /* First member full name */
+    "mmagicode@gmail.com",  /* First member email address */
     "",                   /* Second member full name (leave blank if none) */
     ""                    /* Second member email addr (leave blank if none) */
 };
@@ -47,7 +45,17 @@ void naive_rotate(int dim, pixel *src, pixel *dst)
 char rotate_descr[] = "rotate: Current working version";
 void rotate(int dim, pixel *src, pixel *dst) 
 {
-    naive_rotate(dim, src, dst);
+    int i, j;
+
+    for (i = 0; i < dim; i++) {
+        int tmp = i * dim;
+        for (j = 0; j < dim; j += 4) {
+            dst[(dim-1-j)*dim + i] = src[tmp + j];
+            dst[(dim-2-j)*dim + i] = src[tmp + j+1];
+            dst[(dim-3-j)*dim + i] = src[tmp + j+2];
+            dst[(dim-4-j)*dim + i] = src[tmp + j+3];
+        }
+    }
 }
 
 /*********************************************************************

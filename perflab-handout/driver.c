@@ -15,8 +15,8 @@
  *
  ********************************************************************/
 
-#include <sys/time.h>
 #include <stdio.h>
+#include <sys/time.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>

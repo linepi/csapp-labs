@@ -10,11 +10,11 @@
  * image. Run the driver.c program on your system to get these
  * numbers.  
  */
-#define R64    14.7
-#define R128   40.1
-#define R256   46.4
-#define R512   65.9
-#define R1024  94.5
+#define R64    1.5
+#define R128   1.7
+#define R256   3.5
+#define R512   6.7
+#define R1024  12.5
 
 /* 
  * CPEs for the baseline (naive) version of the smooth function that
@@ -22,11 +22,11 @@
  * image. Run the driver.c program on your system to get these
  * numbers.  
  */
-#define S32   695
-#define S64   698
-#define S128  702
-#define S256  717
-#define S512  722
+#define S32   27.3
+#define S64   27.4
+#define S128  27.5
+#define S256  28.0
+#define S512  27.8
 
 
 #endif /* _CONFIG_H_ */
