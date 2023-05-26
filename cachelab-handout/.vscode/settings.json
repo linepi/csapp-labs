@@ -1,0 +1,9 @@
+{
+	"files.associations": {
+		"cachelab.h": "c",
+		"getopt.h": "c",
+		"getopt_core.h": "c",
+		"getopt_ext.h": "c"
+	},
+	"C_Cpp.errorSquiggles": "enabled"
+}

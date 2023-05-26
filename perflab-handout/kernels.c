@@ -45,15 +45,15 @@ void naive_rotate(int dim, pixel *src, pixel *dst)
 char rotate_descr[] = "rotate: Current working version";
 void rotate(int dim, pixel *src, pixel *dst) 
 {
-    int i, j;
-
-    for (i = 0; i < dim; i++) {
-        int tmp = i * dim;
-        for (j = 0; j < dim; j += 4) {
-            dst[(dim-1-j)*dim + i] = src[tmp + j];
-            dst[(dim-2-j)*dim + i] = src[tmp + j+1];
-            dst[(dim-3-j)*dim + i] = src[tmp + j+2];
-            dst[(dim-4-j)*dim + i] = src[tmp + j+3];
+    int i, j, k, l;
+    int cst0 = dim - 1;
+    for (i = 0 ; i < dim ; i += 16) {
+        for (j = 0 ; j < dim ; j += 16) {
+            for (k = i ; k < i + 16 ; k++) {
+                for (l = j ; l < j + 16 ; l++) {
+                    dst[RIDX(cst0 - l, k, dim)] = src[RIDX(k, l, dim)];
+                }
+            }
         }
     }
 }
